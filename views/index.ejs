@@ -1,0 +1,12 @@
+
+<link rel="stylesheet" href="../public/css/style.css">
+<body>
+<%- include ('./bloks/header.ejs') %>
+<h1>Hi username</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="csv_upload">Upload cvs</label>
+        <input type="file" id="csv_upload" name="csv_upload" required>
+        <button type="submit">Upload</button>
+    </form>
+</form>
+</body>
