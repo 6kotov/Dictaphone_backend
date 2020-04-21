@@ -1,34 +1,43 @@
 body {
-    background: beige;
+  background: beige;
 }
 h1 {
-    font-size:2em;
-    margin-left: 2%;
+  font-size: 2em;
+  margin-left: 2%;
 }
 form {
-    width: 18%;
-    display: flex;
-    flex-direction: column;
-    margin: 1%;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
 }
 input {
-    margin: 1%;
+  margin: 1%;
+}
+
+img {
+  height: 100px;
+  margin-left: 20px;
 }
 button {
-    margin: auto;
-    width: 40%;
+  margin: auto;
+  width: 40%;
 }
 li {
-    display: inline-block;
-    margin-left: 2%;
+  display: inline-block;
+  margin-left: 2%;
 }
 
 .user_list {
-    display: inline-block;
-    margin-bottom: 0.5%;
-    margin-top: 0.5%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5%;
+  margin-top: 0.5%;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .user_item {
-    border: brown solid 2px;
-    margin: 0.5%;
+  border: brown solid 2px;
+  margin: 0.5%;
 }

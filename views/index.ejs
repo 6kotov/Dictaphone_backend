@@ -1,12 +1,31 @@
-
-<link rel="stylesheet" href="../public/css/style.css">
+<link rel="stylesheet" href="../public/css/style.css" />
 <body>
-<%- include ('./bloks/header.ejs') %>
-<h1>Hi username</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <label for="csv_upload">Upload cvs</label>
-        <input type="file" id="csv_upload" name="csv_upload" required>
-        <button type="submit">Upload</button>
-    </form>
-</form>
+  <!-- <%- include ('./bloks/header.ejs') %> -->
+  <h1>Uploaded files list</h1>
+  <form action="/api/upload" method="post" enctype="multipart/form-data">
+    <label for="csv_upload">Upload cvs</label>
+    <input type="file" multiple="true" id="photo" name="photo" required />
+    <button type="submit">Upload</button>
+  </form>
+  <div>
+    <h1>Images</h1>
+    <% imageList.forEach(item => { %>
+    <div class="user_item">
+      <div class="user_list">
+        <%=item%> <img src="../public/images/<%=item%>" alt="image" />
+      </div>
+    </div>
+    <% }) %>
+  </div>
+
+  <div>
+    <h1>Sounds</h1>
+    <% soundList.forEach(item => { %>
+    <div class="user_item">
+      <div class="user_list">
+        FileName: <%=item%>
+      </div>
+    </div>
+    <% }) %>
+  </div>
 </body>
