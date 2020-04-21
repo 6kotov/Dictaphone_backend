@@ -1,6 +1,3 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
 const express = require("express");
 const app = express();
 const multer = require("multer");
@@ -88,6 +85,6 @@ async function readDirectory(dirPath) {
 }
 
 app.listen(
-  process.env.PORT || 3000,
-  console.log("Server started on http://localhost:3000")
+  process.env.PORT || 8815,
+  console.log("Server started on" + process.env.PORT)
 );
