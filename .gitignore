@@ -1,7 +1,7 @@
 # Project exclude paths
 /node_modules/
-/public/images/
-/public/sounds/
+/public/images/*
+/public/sounds/*
 web-build/
 web-report/
 
