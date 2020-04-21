@@ -2,9 +2,14 @@
 <body>
   <!-- <%- include ('./bloks/header.ejs') %> -->
   <h1>Uploaded files list</h1>
-  <form action="/api/upload" method="post" enctype="multipart/form-data">
-    <label for="csv_upload">Upload cvs</label>
-    <input type="file" multiple="true" id="photo" name="photo" required />
+  <form action="/api/upload/image/" method="post" enctype="multipart/form-data">
+    <label for="photo">Upload image</label>
+    <input type="file" id="photo" name="photo" required />
+    <button type="submit">Upload</button>
+  </form>
+  <form action="/api/upload/sound/" method="post" enctype="multipart/form-data">
+    <label for="sound">Upload sound</label>
+    <input type="file" id="sound" name="sound" required />
     <button type="submit">Upload</button>
   </form>
   <div>
@@ -12,7 +17,12 @@
     <% imageList.forEach(item => { %>
     <div class="user_item">
       <div class="user_list">
-        <%=item%> <img src="../public/images/<%=item%>" alt="image" />
+        <%=item%>
+        <img
+          src="../public/images/<%=item%>"
+          onerror="this.onerror=null;this.src='https://iconsplace.com/wp-content/uploads/_icons/800000/256/png/error-icon-8-256.png';"
+          alt="image"
+        />
       </div>
     </div>
     <% }) %>
@@ -23,7 +33,7 @@
     <% soundList.forEach(item => { %>
     <div class="user_item">
       <div class="user_list">
-        FileName: <%=item%>
+        <%=item%>
       </div>
     </div>
     <% }) %>
