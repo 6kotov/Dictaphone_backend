@@ -46,6 +46,12 @@ app.get("/", async (req, res) => {
   res.render("index", { imageList, soundList });
 });
 
+app.get("/soundlist/", async (req, res) => {
+  const sounds = await readDirectory("./public/sounds/");
+  const soundList = sounds.length ? sounds : [];
+  res.send({ soundList });
+});
+
 app.post("/api/upload/image/", imageUpload.single("photo"), (req, res) => {
   res.status(200).json({
     status: "success",
@@ -58,7 +64,7 @@ app.post("/api/upload/sound/", soundUpload.single("sound"), (req, res) => {
   });
 });
 
-app.get("/api/file", async (req, res, next) => {
+app.get("/api/file/", async (req, res, next) => {
   var options = {
     root: path.join(__dirname, "public/images/"),
     dotfiles: "deny",
